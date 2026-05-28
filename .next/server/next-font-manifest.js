@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/oscarpagerup/Downloads/eu-mojligheter 21/app/[locale]/layout\":[\"static/media/26d4368bf94c0ec4-s.p.woff2\",\"static/media/91c3caac73720166-s.p.woff2\",\"static/media/aff755c8b4bb3089-s.p.woff2\",\"static/media/8a1d8947e5852e30-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

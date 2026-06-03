@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { locales, getT } from '@/lib/i18n'
 import { notFound } from 'next/navigation'
+import { Analytics } from "@vercel/analytics/next"
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default async function LocaleLayout({ children, params }) {
       <Nav locale={locale} t={t} />
       <main>{children}</main>
       <Footer locale={locale} t={t} />
+      <Analytics />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Explore EU',
+  title: 'EU Opportunities',
   description: 'Guide to EU-funded opportunities for young people.',
 }
 

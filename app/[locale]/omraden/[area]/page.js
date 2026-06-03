@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   const base = getAreaBySlug(slug)
   if (!base) return {}
   const a = await getLocalizedArea(base, locale)
-  return { title: `${a.name} — Explore EU`, description: a.tagline }
+  return { title: `${a.name} — EU Opportunities`, description: a.tagline }
 }
 
 // Color mapping per area for accent details

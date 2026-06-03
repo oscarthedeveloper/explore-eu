@@ -28,7 +28,7 @@ export default function Nav({ locale, t }) {
             <span className="text-yellow-400 text-sm">★</span>
             <span className="font-bold text-[#003399] text-sm tracking-tight"
               style={{ fontFamily: "'Syne', var(--font-syne), sans-serif" }}>
-              Explore EU
+              EU Opportunities
             </span>
           </Link>
 

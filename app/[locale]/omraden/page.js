@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { locale } = await params
   const t = await getT(locale)
-  return { title: `${t.areasPage?.indexHeading || 'Områden'} — Explore EU` }
+  return { title: `${t.areasPage?.indexHeading || 'Områden'} — EU Opportunities` }
 }
 
 const accentMap = {

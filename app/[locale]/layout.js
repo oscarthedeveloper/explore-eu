@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
   const { locale } = await params
   const t = await getT(locale)
   return {
-    title: 'Explore EU — ' + (t.hero?.line1 || 'Din guide till EU:s möjligheter'),
+    title: 'EU Opportunities — ' + (t.hero?.line1 || 'Din guide till EU:s möjligheter'),
     description: t.hero?.sub || '',
   }
 }

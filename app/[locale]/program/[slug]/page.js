@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
   const base = getProgramBySlug(slug)
   if (!base) return {}
   const program = await getLocalizedProgram(base, locale)
-  return { title: `${program.name} — Explore EU`, description: program.tagline }
+  return { title: `${program.name} — EU Opportunities`, description: program.tagline }
 }
 
 const catColors = {

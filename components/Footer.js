@@ -15,7 +15,7 @@ export default function Footer({ locale, t }) {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-yellow-400">★</span>
-              <span className="text-white font-semibold text-sm" style={{ fontFamily: "'Syne',var(--font-syne),sans-serif" }}>Explore EU</span>
+              <span className="text-white font-semibold text-sm" style={{ fontFamily: "'Syne',var(--font-syne),sans-serif" }}>EU Opportunities</span>
             </div>
             <p className="text-sm leading-relaxed mb-4">{f.tagline}</p>
             <p className="text-xs text-gray-600 mb-6">{f.disclaimer}</p>

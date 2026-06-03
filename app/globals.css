@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Force Syne on ALL headings — overrides Tailwind font-sans from body */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne), 'Syne', sans-serif;
+  }
+
+  p, span, li, a, button, label, input, textarea, select {
+    font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .section-label {
+    font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
+    @apply text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3;
+  }
+}

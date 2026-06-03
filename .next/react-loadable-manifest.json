@@ -1,0 +1,32 @@
+{
+  "components/AnimatedHero.js -> gsap": {
+    "id": "components/AnimatedHero.js -> gsap",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_gsap_index_js.js"
+    ]
+  },
+  "lib/i18n.js -> ./areaTranslations.js": {
+    "id": "lib/i18n.js -> ./areaTranslations.js",
+    "files": [
+      "static/chunks/_app-pages-browser_lib_areaTranslations_js.js"
+    ]
+  },
+  "lib/i18n.js -> ./programMeta.js": {
+    "id": "lib/i18n.js -> ./programMeta.js",
+    "files": [
+      "static/chunks/_app-pages-browser_lib_programMeta_js.js"
+    ]
+  },
+  "lib/i18n.js -> ./programSections.js": {
+    "id": "lib/i18n.js -> ./programSections.js",
+    "files": [
+      "static/chunks/_app-pages-browser_lib_programSections_js.js"
+    ]
+  },
+  "lib/i18n.js -> ./programTranslations.js": {
+    "id": "lib/i18n.js -> ./programTranslations.js",
+    "files": [
+      "static/chunks/_app-pages-browser_lib_programTranslations_js.js"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/[locale]/program/[slug]/page": "/[locale]/program/[slug]",
+  "/[locale]/omraden/page": "/[locale]/omraden",
+  "/[locale]/omraden/[area]/page": "/[locale]/omraden/[area]",
+  "/[locale]/page": "/[locale]"
+}

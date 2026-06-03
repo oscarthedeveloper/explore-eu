@@ -28,3 +28,7 @@
     @apply text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3;
   }
 }
+
+.mb-6 {
+  margin-bottom: 0;
+}

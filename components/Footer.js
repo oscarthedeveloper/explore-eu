@@ -19,6 +19,11 @@ export default function Footer({ locale, t }) {
             </div>
             <p className="text-sm leading-relaxed mb-4">{f.tagline}</p>
             <p className="text-xs text-gray-600 mb-6">{f.disclaimer}</p>
+<div className="mt-4 flex justify-center">
+  <a href="https://hvitstierna.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img src="/eu-emblem/stiernaVIT.svg" alt="Logotyp" width={80} style={{ marginBottom: '10px' }} />
+  </a>
+</div>
             <div className="pt-4 border-t border-gray-800">
               <EUEmblem variant="neg" width={200} />
             </div>

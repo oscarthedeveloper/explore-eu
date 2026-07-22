@@ -12,6 +12,13 @@ module.exports = {
         sans: ['var(--font-ibm-plex-sans)', 'IBM Plex Sans', 'sans-serif'],
         serif: ['var(--font-ibm-plex-serif)', 'IBM Plex Serif', 'serif'],
         display: ['var(--font-syne)', 'Syne', 'sans-serif'],
+        mono: ['var(--font-ibm-plex-mono)', 'IBM Plex Mono', 'ui-monospace', 'monospace'],
+      },
+      colors: {
+        eublue: '#003399',
+        euyellow: '#FFCC00',
+        paper: '#FAFAF8',
+        ink: '#14151A',
       },
     },
   },

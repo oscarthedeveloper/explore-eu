@@ -2,33 +2,195 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   EXPLORE EU — "Blueprint" design system
+   Thin dark-gray hairlines, engineering grid, precision.
+   Light paper + EU blue/yellow accents + IBM Plex Mono.
+   (Custom classes kept outside @layer so they are never purged.)
+   ============================================================ */
+
+:root {
+  --paper:        #FAFAF8;
+  --paper-2:      #F3F3EF;
+  --ink:          #14151A;
+  --ink-soft:     #5A5D66;
+  --ink-faint:    #8A8D96;
+
+  --hair:         rgba(20, 22, 28, 0.16);
+  --hair-strong:  rgba(20, 22, 28, 0.30);
+  --hair-faint:   rgba(20, 22, 28, 0.07);
+  --hair-inv:     rgba(255, 255, 255, 0.14);
+
+  --eu-blue:      #003399;
+  --eu-blue-600:  #0040BB;
+  --eu-yellow:    #FFCC00;
+
+  --frame: 64rem;
+  --pad:   clamp(1rem, 4vw, 1.5rem);
+}
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { -webkit-text-size-adjust: 100%; }
 
   body {
+    background: var(--paper);
+    color: var(--ink);
     font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  /* Force Syne on ALL headings — overrides Tailwind font-sans from body */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-syne), 'Syne', sans-serif;
-  }
-
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-syne), 'Syne', sans-serif; }
   p, span, li, a, button, label, input, textarea, select {
     font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
   }
+
+  ::selection { background: var(--eu-yellow); color: #14151A; }
 }
 
-@layer components {
-  .section-label {
-    font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif;
-    @apply text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3;
-  }
+/* ---- Lenis smooth scroll ---- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---- Container tied to the blueprint frame ---- */
+.frame-x {
+  width: 100%;
+  max-width: var(--frame);
+  margin-inline: auto;
+  padding-inline: var(--pad);
 }
 
-.mb-6 {
-  margin-bottom: 0;
+.mono {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
+
+.section-label {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+/* ---- Ruled band (frame + rails + top rule) ---- */
+.band {
+  position: relative;
+  width: 100%;
+  max-width: var(--frame);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+  border-left: 1px solid var(--hair);
+  border-right: 1px solid var(--hair);
+  border-top: 1px solid var(--hair);
+}
+.band.is-fill { background: var(--paper-2); }
+.band.is-last { border-bottom: 1px solid var(--hair); }
+.band.is-ink {
+  background: var(--ink);
+  color: #EDEDEA;
+  border-color: var(--hair-inv);
+}
+.band.is-ink .section-label { color: rgba(255,255,255,0.55); }
+
+/* hairline helpers */
+.hair    { border-color: var(--hair); }
+.hair-t  { border-top: 1px solid var(--hair); }
+.hair-b  { border-bottom: 1px solid var(--hair); }
+.hair-x  { border-left: 1px solid var(--hair); border-right: 1px solid var(--hair); }
+
+/* decorative corner crosshair */
+.tick { position: relative; }
+.tick::before, .tick::after { content: ''; position: absolute; background: var(--hair-strong); top: -3px; left: -3px; }
+.tick::before { width: 7px; height: 1px; }
+.tick::after  { width: 1px; height: 7px; }
+
+/* table-style hairline grid: cells draw top+left, wrapper draws right+bottom */
+.cellgrid { border-right: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.cellgrid > * { border-top: 1px solid var(--hair); border-left: 1px solid var(--hair); }
+.cellgrid.is-inv { border-color: var(--hair-inv); }
+.cellgrid.is-inv > * { border-color: var(--hair-inv); }
+
+/* hairline card */
+.b-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.b-card:hover { border-color: var(--hair-strong); }
+
+/* mono chip / tag */
+.chip {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--hair);
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper);
+}
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500;
+  padding: 11px 20px; border-radius: 2px;
+  transition: all .2s ease; white-space: nowrap;
+}
+.btn-primary { background: var(--eu-blue); color: #fff; }
+.btn-primary:hover { background: var(--eu-blue-600); }
+.btn-ghost { border: 1px solid var(--hair-strong); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-inv { border: 1px solid var(--hair-inv); color: #EDEDEA; background: transparent; }
+.btn-inv:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+/* blueprint graph-paper background */
+.graph-bg {
+  background-image:
+    linear-gradient(to right,  var(--hair-faint) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hair-faint) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center top;
+}
+
+/* fixed vertical rails behind everything */
+.grid-frame { position: fixed; inset: 0; z-index: 0; pointer-events: none; display: flex; justify-content: center; }
+.grid-frame__col {
+  width: 100%; max-width: var(--frame); height: 100%;
+  border-left: 1px solid var(--hair);
+  border-right: 1px solid var(--hair);
+}
+
+/* scroll progress hairline */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 100%;
+  transform: scaleX(0); transform-origin: 0 50%;
+  background: var(--eu-blue); z-index: 60; pointer-events: none;
+}
+
+/* ---- Reveal (progressive enhancement) ---- */
+.js-fx [data-reveal] {
+  opacity: 0; transform: translateY(16px); will-change: opacity, transform;
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--d, 0s);
+}
+.js-fx [data-reveal-x] {
+  opacity: 0; transform: translateX(-14px); will-change: opacity, transform;
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--d, 0s);
+}
+.js-fx [data-reveal].is-in, .js-fx [data-reveal-x].is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-fx [data-reveal], .js-fx [data-reveal-x] { opacity: 1 !important; transform: none !important; transition: none; }
+  html { scroll-behavior: auto; }
 }

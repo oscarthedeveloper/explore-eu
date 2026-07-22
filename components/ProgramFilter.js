@@ -19,24 +19,27 @@ export default function ProgramFilter({ programs, t, locale }) {
   const filtered = active === 'all' ? programs : programs.filter((p) => p.category === active)
 
   return (
-    <div>
+    <div data-reveal>
       <div className="flex flex-wrap gap-2 mb-8">
-        {filters.map((f) => (
-          <button
-            key={f.id}
-            onClick={() => setActive(f.id)}
-            className={`text-sm px-4 py-1.5 rounded-full border transition-all font-medium ${
-              active === f.id
-                ? 'bg-gray-900 text-white border-gray-900'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'
-            }`}
-            style={{ fontFamily: "var(--font-ibm-plex-sans),'IBM Plex Sans',sans-serif" }}
-          >
-            {f.label}
-          </button>
-        ))}
+        {filters.map((f) => {
+          const on = active === f.id
+          return (
+            <button
+              key={f.id}
+              onClick={() => setActive(f.id)}
+              className="mono text-[11px] uppercase tracking-[0.1em] px-3.5 py-2 rounded-[2px] border transition-colors"
+              style={
+                on
+                  ? { background: 'var(--ink)', color: '#fff', borderColor: 'var(--ink)' }
+                  : { background: 'transparent', color: 'var(--ink-soft)', borderColor: 'var(--hair)' }
+              }
+            >
+              {f.label}
+            </button>
+          )
+        })}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="cellgrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((program) => (
           <ProgramCard key={program.slug} program={program} locale={locale} t={t} />
         ))}

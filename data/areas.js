@@ -14,7 +14,7 @@ export const areas = [
     },
     stats: [
       { value: '6–12 mån', label: 'Vanligaste projektlängd' },
-      { value: '~30%', label: 'Andel av alla ESK-platser' },
+      { value: 'Störst', label: 'En av de största kategorierna' },
       { value: '0 €', label: 'Kostnad för dig' },
     ],
     body: 'Socialt arbete är en av de största kategorierna inom Europeiska Solidaritetskåren. Det handlar sällan om någon "expertroll" — det handlar om att finnas där. Att laga frukost på ett härbärge. Att följa med någon till banken. Att prata, lyssna, vara närvarande.\n\nProjekt finns i hela Europa: från storstadsbaserade härbärgen och stödbostäder i Berlin och Lissabon, till mindre lokala initiativ på landsbygden. Många projekt riktar sig mot specifika grupper — hemlösa, EU-medborgare i utsatthet, personer med beroendeproblematik, ensamstående föräldrar, personer som lämnat institutionsvård.\n\nDu får oftast ett konkret ansvarsområde efter en introduktionsperiod. Värdorganisationen utbildar dig löpande, och du arbetar alltid tillsammans med erfaren personal.',
@@ -52,7 +52,7 @@ export const areas = [
     },
     stats: [
       { value: '6–12 mån', label: 'Vanligaste projektlängd' },
-      { value: '25+', label: 'Länder med aktiva projekt' },
+      { value: 'Hela EU', label: 'Projekt i hela Europa' },
       { value: '0 €', label: 'Kostnad för dig' },
     ],
     body: 'Migration är en av Europas största sociala frågor — och en av de mest meningsfulla områdena att arbeta inom. ESK-projekt finns i mottagningscenter, asylboenden, ungdomsgårdar för ensamkommande, integrationscenter och organisationer som arbetar med papperslösa.\n\nArbetet är konkret och varierande: språkkaféer, läxhjälp för barn, juridisk grundinformation, fritidsaktiviteter, kvinnogrupper, informationsinsatser om rättigheter. Många projekt drivs av NGO:er som arbetar parallellt med det offentliga systemet, men också av kyrkor, fackföreningar och kommunala center.\n\nProjekt som rör flyktingmottagande kräver ofta särskild handledning — du arbetar med människor som ibland upplevt trauma, och organisationen ger dig löpande stöd. Du förväntas inte vara terapeut. Du förväntas vara en närvarande medmänniska.',
@@ -90,7 +90,7 @@ export const areas = [
     },
     stats: [
       { value: '6–12 mån', label: 'Vanligaste projektlängd' },
-      { value: '~25%', label: 'Andel av alla ESK-platser' },
+      { value: 'Brett', label: 'Ett av de bredaste områdena' },
       { value: '0 €', label: 'Kostnad för dig' },
     ],
     body: 'Detta är ett av de bredaste och mest populära områdena inom ESK. Projekten varierar från reguljära skolor (där du oftast är språkassistent eller hjälper i klassrum) till fritidsgårdar, ungdomscenter och organisationer som arbetar med informellt lärande — alltså lärande som händer utanför skolan, genom aktiviteter, spel, workshops och samtal.\n\nMånga europeiska skolor tar emot ESK-volontärer för att ge eleverna autentisk kontakt med ett annat europeiskt språk och kultur. Du är inte lärare — du är en närvarande ung vuxen som introducerar engelska, svenska, eller din egen kultur, ofta genom konversation och lek.\n\nFritidssektorn är minst lika viktig. Här handlar det om att vara en stabil närvaro för unga som kanske inte alltid har det stödet hemma — leda aktiviteter, lyssna, organisera utflykter, bygga ett mentorskap över tid.',

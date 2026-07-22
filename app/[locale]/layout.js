@@ -1,6 +1,8 @@
-import { IBM_Plex_Sans, IBM_Plex_Serif, Syne } from 'next/font/google'
+import { IBM_Plex_Sans, IBM_Plex_Serif, IBM_Plex_Mono, Syne } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import GridFrame from '@/components/GridFrame'
+import SmoothScroll from '@/components/SmoothScroll'
 import { locales, getT } from '@/lib/i18n'
 import { notFound } from 'next/navigation'
 import { Analytics } from "@vercel/analytics/next"
@@ -15,6 +17,12 @@ const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-ibm-plex-serif',
+  display: 'swap',
+})
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-ibm-plex-mono',
   display: 'swap',
 })
 const syne = Syne({
@@ -42,19 +50,27 @@ export default async function LocaleLayout({ children, params }) {
   if (!locales.includes(locale)) notFound()
 
   const t = await getT(locale)
-  const fontClasses = `${ibmPlexSans.variable} ${ibmPlexSerif.variable} ${syne.variable} font-sans bg-white text-gray-900 antialiased`
+  const fontClasses = `${ibmPlexSans.variable} ${ibmPlexSerif.variable} ${ibmPlexMono.variable} ${syne.variable} font-sans antialiased`
 
   return (
     <div lang={locale} className={fontClasses}>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet"
       />
-      <Nav locale={locale} t={t} />
-      <main>{children}</main>
-      <Footer locale={locale} t={t} />
+
+      <div id="scroll-progress" className="scroll-progress" />
+      <GridFrame />
+
+      <div className="relative z-10">
+        <Nav locale={locale} t={t} />
+        <main>{children}</main>
+        <Footer locale={locale} t={t} />
+      </div>
+
+      <SmoothScroll />
       <Analytics />
     </div>
   )

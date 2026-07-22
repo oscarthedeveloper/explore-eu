@@ -45,7 +45,7 @@ export const programs = [
         icon: '💡',
         title: 'Solidaritetsprojekt',
         duration: '2–12 månader',
-        description: 'Skapa ett eget projekt i din hemstad tillsammans med minst 5 vänner. Ni bestämmer inriktningen själva — deltid.',
+        description: 'Skapa ett eget projekt i din hemstad tillsammans med minst 5 personer (inklusive dig själv). Ni bestämmer inriktningen själva — deltid.',
         bullets: ['630 € i månaden för projektet', 'Ansök direkt utan organisation', 'Du bestämmer ämnet', 'Stöd från en coach ingår'],
       },
     ],
@@ -101,7 +101,7 @@ export const programs = [
     stats: [
       { value: '18–35', label: 'Ålderskrav' },
       { value: '5 dagar', label: 'Obligatorisk utbildning på plats' },
-      { value: '3', label: 'Organisationer krävs' },
+      { value: 'Utanför EU', label: 'Insatser i tredjeländer' },
     ],
     hero: {
       pill: '🌍 Humanitärt bistånd utanför EU',
@@ -199,10 +199,10 @@ export const programs = [
       },
       {
         icon: '🏛️',
-        title: 'Jean Monnet-åtgärder',
+        title: 'Politikstöd (KA3) & Jean Monnet',
         duration: 'Varierar',
-        description: 'Stöd för undervisning och forskning om europeisk integration vid högre utbildningsinstitutioner.',
-        bullets: ['Jean Monnet-moduler', 'Jean Monnet-lärostolar', 'Centres of Excellence'],
+        description: 'Den tredje nyckelaktionen (KA3) stödjer politikutveckling och samarbete. Jean Monnet-åtgärderna är en egen del av programmet — stöd för undervisning och forskning om europeisk integration.',
+        bullets: ['KA3: stöd till politikreform', 'Jean Monnet-moduler och lärostolar', 'Centres of Excellence', 'Idrott ingår som egen del'],
       },
     ],
     covered: [
@@ -379,7 +379,7 @@ export const programs = [
     color: 'blue',
     stats: [
       { value: '1 889 €', label: 'Per månad (Belgien/Luxemburg)' },
-      { value: '2 257 €', label: 'Per månad (Sverige)' },
+      { value: '~2 300 €', label: 'Per månad (Sverige, ca)' },
       { value: '300 €', label: 'Reseersättning' },
     ],
     hero: {
@@ -389,7 +389,7 @@ export const programs = [
     },
     what: {
       heading: 'Två vägar in i parlamentet',
-      body: 'Europaparlamentet erbjuder två distinkta typer av praktik under Schuman-programmet: praktik vid sekretariatet och praktik direkt hos enskilda ledamöter (MEP-praktik). Dessa är separata program med olika regler, behörighetskrav och ersättningsnivåer.\n\nErsättningen för sekretariatspraktiken varierar per land. I Sverige uppgår den till 2 257 euro per månad (koefficient 119,5%). En extra reseersättning på 300 euro utbetalas som schablonbelopp.\n\nEtt nytt program — Schuman Recruitment and Development Programme — ger dessutom högpresterande praktikanter möjligheten att fortsätta som kontraktsanställda i parlamentet.',
+      body: 'Europaparlamentet erbjuder två distinkta typer av praktik under Schuman-programmet: praktik vid sekretariatet och praktik direkt hos enskilda ledamöter (MEP-praktik). Dessa är separata program med olika regler, behörighetskrav och ersättningsnivåer.\n\nErsättningen för sekretariatspraktiken varierar per land. I Sverige uppgår den till cirka 2 300 euro per månad (landets korrigeringskoefficient uppdateras årligen). En extra reseersättning på 300 euro utbetalas som schablonbelopp.\n\nEtt nytt program — Schuman Recruitment and Development Programme — ger dessutom högpresterande praktikanter möjligheten att fortsätta som kontraktsanställda i parlamentet.',
     },
     formats: [
       {
@@ -397,7 +397,7 @@ export const programs = [
         title: 'Praktik vid sekretariatet',
         duration: '5 månader (okt–feb eller mars–jul)',
         description: 'Praktik inom EU-politik, finans, juridik, flerspråkighet, kommunikation eller IT. Ansökan i maj (för oktober) eller oktober (för mars).',
-        bullets: ['1 889 €/mån i Belgien, 2 257 €/mån i Sverige', '300 € reseersättning', 'Universitetsexamen eller viss yrkeskvalifikation krävs', 'Max 2 månaders tidigare EU-erfarenhet'],
+        bullets: ['1 889 €/mån i Belgien, ~2 300 €/mån i Sverige', '300 € reseersättning', 'Universitetsexamen eller viss yrkeskvalifikation krävs', 'Max 2 månaders tidigare EU-erfarenhet'],
       },
       {
         icon: '🧑‍⚖️',
@@ -408,9 +408,9 @@ export const programs = [
       },
     ],
     covered: [
-      { icon: '💶', title: 'Månatlig ersättning', desc: 'Varierar per land. Sverige: 2 257 €/mån. Basbelopp: 1 889 €/mån.' },
+      { icon: '💶', title: 'Månatlig ersättning', desc: 'Varierar per land. Sverige: ~2 300 €/mån. Basbelopp: 1 889 €/mån.' },
       { icon: '✈️', title: 'Reseersättning', desc: '300 euro schablonbelopp per praktikant.' },
-      { icon: '♿', title: 'Funktionedsättningstillägg', desc: 'Upp till 50% extra av månadsersättningen för långvarig funktionsnedsättning (20%+).' },
+      { icon: '♿', title: 'Funktionsnedsättningstillägg', desc: 'Upp till 50% extra av månadsersättningen för långvarig funktionsnedsättning (20%+).' },
     ],
     steps: [
       { n: '01', title: 'Välj typ av praktik', desc: 'Sekretariatspraktik eller MEP-praktik — de är separata program med olika regler och ansökningsprocess.' },
@@ -444,37 +444,37 @@ export const programs = [
     budget: 'Samordnas av Europeiska arbetsmyndigheten (ELA)',
     color: 'green',
     stats: [
-      { value: '3 milj.', label: 'Lediga tjänster i databasen' },
-      { value: '850+', label: 'EURES-rådgivare' },
+      { value: '~4 milj.', label: 'Lediga tjänster i databasen' },
+      { value: '1 000+', label: 'EURES-rådgivare' },
       { value: '31', label: 'Länder täcks' },
     ],
     hero: {
       pill: '💼 Europeisk arbetsförmedling',
       heading: 'Hela Europa — din arbetsmarknad',
-      sub: 'EURES är EU:s nätverk för arbetsförmedlingstjänster i 31 länder. Gratis rådgivning, CV-granskning, juridisk vägledning och en databas med 3 miljoner lediga tjänster. För dig som vill jobba i ett annat europeiskt land.',
+      sub: 'EURES är EU:s nätverk för arbetsförmedlingstjänster i 31 länder. Gratis rådgivning, CV-granskning, juridisk vägledning och en databas med nästan 4 miljoner lediga tjänster. För dig som vill jobba i ett annat europeiskt land.',
     },
     what: {
       heading: 'Mer än en jobbdatabas',
-      body: 'EURES — European Employment Services — är ett nätverk av mer än 850 rådgivare som dagligen hjälper arbetssökande och arbetsgivare i hela Europa. Nätverket täcker EU:s 27 medlemsstater plus Island, Liechtenstein, Norge och Schweiz — totalt 31 länder.\n\nSedan 2021 samordnas EURES av den Europeiska arbetsmyndigheten (ELA). Tjänsterna är kostnadsfria och tillgängliga för alla européer, oavsett utbildningsnivå eller yrke.',
+      body: 'EURES — European Employment Services — är ett nätverk av mer än 1 000 rådgivare som dagligen hjälper arbetssökande och arbetsgivare i hela Europa. Nätverket täcker EU:s 27 medlemsstater plus Island, Liechtenstein, Norge och Schweiz — totalt 31 länder.\n\nSedan 2021 samordnas EURES av den Europeiska arbetsmyndigheten (ELA). Tjänsterna är kostnadsfria och tillgängliga för alla européer, oavsett utbildningsnivå eller yrke.',
     },
     formats: [
       {
         icon: '🔍',
         title: 'EURES-portalen',
         duration: 'Alltid tillgänglig',
-        description: 'Online-plattform med 3 miljoner lediga tjänster och 1 miljon CV. Matchning av jobb och kandidater.',
+        description: 'Online-plattform med nästan 4 miljoner lediga tjänster och 1 miljon CV. Matchning av jobb och kandidater.',
         bullets: ['Sök jobb i 31 länder', 'Ladda upp ditt CV', 'Filtrera på land, sektor, utbildning', 'Gratis för alla'],
       },
       {
         icon: '👤',
         title: 'EURES-rådgivare',
         duration: 'Boka möte',
-        description: 'Personlig rådgivning från 850+ specialiserade rådgivare i 270 EURES-organisationer.',
+        description: 'Personlig rådgivning från 1 000+ specialiserade rådgivare i 270 EURES-organisationer.',
         bullets: ['CV-granskning och förbättring', 'Juridisk rådgivning om social trygghet', 'Information om levnads- och arbetsvillkor', 'Kontaktas via portal, telefon eller chatt'],
       },
     ],
     covered: [
-      { icon: '🔍', title: 'Jobbdatabas', desc: '3 miljoner lediga tjänster och 1 miljon CV på EURES-portalen.' },
+      { icon: '🔍', title: 'Jobbdatabas', desc: 'nästan 4 miljoner lediga tjänster och 1 miljon CV på EURES-portalen.' },
       { icon: '📄', title: 'CV-stöd', desc: 'Granskning, förbättring och anpassning av ditt CV för europeiska arbetsgivare.' },
       { icon: '⚖️', title: 'Juridisk rådgivning', desc: 'Information om social trygghet, skatt, pension och sjukförsäkring i destinationslandet.' },
       { icon: '🎪', title: 'Jobbmässor', desc: 'Tillgång till European Job Days — digitala och fysiska jobbmässor.' },
@@ -483,7 +483,7 @@ export const programs = [
     ],
     steps: [
       { n: '01', title: 'Skapa en profil', desc: 'Gå till eures.europa.eu och ladda upp ditt CV. Välj vilket land och vilken sektor du är intresserad av.' },
-      { n: '02', title: 'Sök jobb', desc: 'Bläddra bland 3 miljoner lediga tjänster. Filtrera på plats, typ och utbildningskrav.' },
+      { n: '02', title: 'Sök jobb', desc: 'Bläddra bland nästan 4 miljoner lediga tjänster. Filtrera på plats, typ och utbildningskrav.' },
       { n: '03', title: 'Kontakta en EURES-rådgivare', desc: 'För personlig rådgivning, kontakta en lokal rådgivare via portalen, telefon eller chatt. Gratis.' },
       { n: '04', title: 'Ansök och förbered flytten', desc: 'Ansök direkt till arbetsgivare via portalen. Rådgivarna hjälper med visum, erkännande av kvalifikationer och praktisk information.' },
     ],
@@ -509,12 +509,12 @@ export const programs = [
     ageRange: '18+ år (inga krav på utbildning)',
     duration: 'Varierar per projekt',
     funding: 'Finansiering för resor, språkkurser, m.m.',
-    budget: 'Finansieras via ESF+',
+    budget: 'Finansieras via EaSI (ESF+)',
     color: 'green',
     stats: [
       { value: '18+', label: 'Ålder — inga andra krav' },
       { value: '3', label: 'Aktiva lead-projekt' },
-      { value: 'ESF+', label: 'EU-finansiering' },
+      { value: 'EaSI', label: 'ESF+-finansiering' },
     ],
     hero: {
       pill: '🎯 Riktat rörlighetsstöd',
@@ -578,17 +578,17 @@ export const programs = [
     color: 'purple',
     stats: [
       { value: '38', label: 'Eurodesk-center i Europa' },
-      { value: '4 000+', label: 'Lokala multiplikatorer' },
+      { value: '3 500+', label: 'Lokala multiplikatorer' },
       { value: '200+', label: 'Program i Opportunity Finder' },
     ],
     hero: {
       pill: '🔍 Ungdomsinformation sedan 1990',
       heading: 'Hitta alla möjligheter på ett ställe',
-      sub: 'Eurodesk är det europeiska nätverket som hjälper unga att hitta rätt bland alla EU:s möjligheter. 38 center, 4 000+ lokala informatörer och en databas med 200+ program.',
+      sub: 'Eurodesk är det europeiska nätverket som hjälper unga att hitta rätt bland alla EU:s möjligheter. 38 center, 3 500+ lokala informatörer och en databas med 200+ program.',
     },
     what: {
       heading: 'Din guide till EU:s möjligheter',
-      body: 'Eurodesk grundades i mars 1990 i Edinburgh som ett litet regionalt helpdesk med en enkel idé: samla all relevant europeisk information på ett ställe och presentera den på ett ungdomsvänligt sätt. Idén rönte omedelbar framgång.\n\nI dag är Eurodesk ett europeiskt nätverk med 38 nationella center kopplade till mer än 4 000 lokala informationsgivare i 36 länder. Nätverket är finansierat av Erasmus+ och organiserat som en internationell ideell förening (AISBL) under belgisk lagstiftning med säte i Bryssel.\n\nEurodesk förvaltar European Youth Portal och ansvarar för dess helpdesk — och svarar varje år på tusentals frågor om att resa utomlands med EU-program.',
+      body: 'Eurodesk grundades i mars 1990 i Edinburgh som ett litet regionalt helpdesk med en enkel idé: samla all relevant europeisk information på ett ställe och presentera den på ett ungdomsvänligt sätt. Idén rönte omedelbar framgång.\n\nI dag är Eurodesk ett europeiskt nätverk med 38 nationella center kopplade till mer än 3 500 lokala informationsgivare i 36 länder. Nätverket är finansierat av Erasmus+ och organiserat som en internationell ideell förening (AISBL) under belgisk lagstiftning med säte i Bryssel.\n\nEurodesk förvaltar European Youth Portal och ansvarar för dess helpdesk — och svarar varje år på tusentals frågor om att resa utomlands med EU-program.',
     },
     formats: [
       {
@@ -642,14 +642,14 @@ export const programs = [
     budget: 'EU-finansierat',
     color: 'blue',
     stats: [
-      { value: '400', label: 'Lokala center i EU' },
+      { value: '~400', label: 'Lokala center i EU' },
       { value: '27', label: 'EU-länder täckta' },
       { value: 'Gratis', label: 'Telefonsamtal inom EU' },
     ],
     hero: {
       pill: '☎️ EU:s medborgartjänst',
       heading: 'Direktlinje till EU',
-      sub: 'Europa Direkt är EU:s öppna dörr för alla medborgare. Ring gratis, chatta eller besök ett av de 400 lokala centren — på ditt eget EU-språk. För alla frågor om EU: lagstiftning, rättigheter, program och finansiering.',
+      sub: 'Europa Direkt är EU:s öppna dörr för alla medborgare. Ring gratis, chatta eller besök ett av de omkring 400 lokala centren — på ditt eget EU-språk. För alla frågor om EU: lagstiftning, rättigheter, program och finansiering.',
     },
     what: {
       heading: 'EU nära dig',
@@ -696,7 +696,7 @@ export const programs = [
     name: 'EU Youth Portal',
     shortName: 'Youth Portal',
     emoji: '🌐',
-    tagline: 'EU-kommissionens och Euredesks gemensamma portal — all EU-information för unga på ett ställe.',
+    tagline: 'EU-kommissionens och Eurodesks gemensamma portal — all EU-information för unga på ett ställe.',
     category: 'info',
     categoryLabel: 'Information & stöd',
     ageRange: '13–30 år',
@@ -705,18 +705,18 @@ export const programs = [
     budget: 'EU-finansierat',
     color: 'purple',
     stats: [
-      { value: '23', label: 'Officiella EU-språk' },
+      { value: '24', label: 'Officiella EU-språk' },
       { value: '4', label: 'Huvudsektioner' },
       { value: 'Gratis', label: 'Alltid tillgänglig' },
     ],
     hero: {
       pill: '🌐 Din port till EU:s möjligheter',
       heading: 'Allt om EU — för unga',
-      sub: 'EU Youth Portal är EU-kommissionens och Euredesks gemensamma plattform. Här hittar du information om alla EU:s program och möjligheter, kan ansöka till DiscoverEU och läsa om dina rättigheter som ung EU-medborgare.',
+      sub: 'EU Youth Portal är EU-kommissionens och Eurodesks gemensamma plattform. Här hittar du information om alla EU:s program och möjligheter, kan ansöka till DiscoverEU och läsa om dina rättigheter som ung EU-medborgare.',
     },
     what: {
       heading: 'Mer än en webbplats',
-      body: 'EU Youth Portal underhålls gemensamt av Europeiska kommissionen och Eurodesk-nätverket. Den täcker 23 officiella EU-språk, och DiscoverEU-innehåll finns dessutom på isländska, makedonska, norska, serbiska och turkiska.\n\nPortalen är djupt förankrad i EU:s ungdomsstrategi 2019–2027 — ramverket för EU:s ungdomspolicysamarbete baserat på rådets resolution av den 26 november 2018. Strategin fokuserar på tre kärnord: Engage (engagera), Connect (koppla samman) och Empower (stärka).',
+      body: 'EU Youth Portal underhålls gemensamt av Europeiska kommissionen och Eurodesk-nätverket. Den finns på EU:s alla 24 officiella språk, och DiscoverEU-innehåll finns dessutom på isländska, makedonska, norska, serbiska och turkiska.\n\nPortalen är djupt förankrad i EU:s ungdomsstrategi 2019–2027 — ramverket för EU:s ungdomspolicysamarbete baserat på rådets resolution av den 26 november 2018. Strategin fokuserar på tre kärnord: Engage (engagera), Connect (koppla samman) och Empower (stärka).',
     },
     formats: [
       {

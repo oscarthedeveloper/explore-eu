@@ -9,6 +9,16 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
+function Eyebrow({ index, label }) {
+  return (
+    <div className="flex items-center gap-3 mb-6" data-reveal-x>
+      <span className="mono text-[10.5px] tracking-[0.2em] text-gray-400">{index}</span>
+      <span className="block w-7 h-px" style={{ background: 'var(--hair-strong)' }} />
+      <span className="section-label !mb-0">{label}</span>
+    </div>
+  )
+}
+
 export default async function Home({ params }) {
   const { locale } = await params
   const t = await getT(locale)
@@ -20,88 +30,98 @@ export default async function Home({ params }) {
     <>
       <AnimatedHero t={t} locale={locale} />
 
-      <section id="vad-ar-det" className="bg-gray-50 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14">
+      {/* WHAT */}
+      <section id="vad-ar-det">
+        <div className="band is-fill py-16">
           <div className="max-w-3xl">
-            <p className="section-label">{h.what.label}</p>
-            <h2 className="font-bold text-2xl text-gray-900 mb-3">{h.what.heading}</h2>
-            <p className="text-gray-600 leading-relaxed">{h.what.body}</p>
+            <Eyebrow index="01" label={h.what.label} />
+            <h2 className="font-bold text-2xl mb-3" style={{ color: 'var(--ink)' }} data-reveal>{h.what.heading}</h2>
+            <p className="text-gray-600 leading-relaxed" data-reveal>{h.what.body}</p>
           </div>
         </div>
       </section>
 
-      <section id="program" className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-        <div className="mb-8">
-          <p className="section-label">{h.programs.label}</p>
-          <h2 className="font-bold text-2xl text-gray-900">{h.programs.heading}</h2>
+      {/* PROGRAMS */}
+      <section id="program">
+        <div className="band py-16">
+          <div className="mb-8">
+            <Eyebrow index="02" label={h.programs.label} />
+            <h2 className="font-bold text-2xl" style={{ color: 'var(--ink)' }} data-reveal>{h.programs.heading}</h2>
+          </div>
+          <ProgramFilter programs={localizedPrograms} t={t} locale={locale} />
         </div>
-        <ProgramFilter programs={localizedPrograms} t={t} locale={locale} />
       </section>
 
-      <section id="hur-det-fungerar" className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-          <p className="section-label">{h.howItWorks.label}</p>
-          <h2 className="font-bold text-2xl text-gray-900 mb-10">{h.howItWorks.heading}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      {/* HOW IT WORKS */}
+      <section id="hur-det-fungerar">
+        <div className="band is-fill py-16">
+          <Eyebrow index="03" label={h.howItWorks.label} />
+          <h2 className="font-bold text-2xl mb-10" style={{ color: 'var(--ink)' }} data-reveal>{h.howItWorks.heading}</h2>
+          <div className="cellgrid grid grid-cols-1 sm:grid-cols-3">
             {h.howItWorks.steps.map((step, i) => (
-              <div key={i} className="flex gap-4">
-                <span className="font-bold text-3xl text-gray-100 leading-none flex-shrink-0"
-                  style={{ fontFamily: "'Syne',var(--font-syne),sans-serif" }}>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1 text-sm">{step.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
-                </div>
+              <div key={i} className="p-6" data-reveal style={{ '--d': `${i * 0.06}s` }}>
+                <span className="mono text-xs tracking-[0.2em] text-gray-400">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-semibold mt-4 mb-1 text-sm" style={{ color: 'var(--ink)' }}>{step.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-        <p className="section-label">{h.quickPicks.label}</p>
-        <h2 className="font-bold text-2xl text-gray-900 mb-8">{h.quickPicks.heading}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {h.quickPicks.items.map((pick) => (
-            <Link key={pick.slug} href={`${base}/program/${pick.slug}`}
-              className="group flex gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:border-[#003399]/30 hover:shadow-sm transition-all duration-200">
-              <span className="text-2xl flex-shrink-0">{pick.icon}</span>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-[#003399] transition-colors text-sm">{pick.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed mb-2">{pick.desc}</p>
-                <span className="text-xs font-medium text-emerald-600">{pick.cta}</span>
-              </div>
-            </Link>
-          ))}
+      {/* QUICK PICKS */}
+      <section>
+        <div className="band py-16">
+          <Eyebrow index="04" label={h.quickPicks.label} />
+          <h2 className="font-bold text-2xl mb-8" style={{ color: 'var(--ink)' }} data-reveal>{h.quickPicks.heading}</h2>
+          <div className="cellgrid grid grid-cols-1 sm:grid-cols-2">
+            {h.quickPicks.items.map((pick, i) => (
+              <Link key={pick.slug} href={`${base}/program/${pick.slug}`}
+                className="group flex gap-4 p-5 transition-colors hover:bg-[var(--paper-2)]"
+                data-reveal style={{ '--d': `${i * 0.05}s` }}>
+                <span className="text-2xl flex-shrink-0">{pick.icon}</span>
+                <div>
+                  <h3 className="font-semibold mb-1 text-sm transition-colors group-hover:text-[#003399]" style={{ color: 'var(--ink)' }}>{pick.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed mb-2">{pick.desc}</p>
+                  <span className="mono text-[10.5px] uppercase tracking-wide text-[#003399]">{pick.cta}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-          <p className="section-label">{h.faq.label}</p>
-          <h2 className="font-bold text-2xl text-gray-900 mb-8">{h.faq.heading}</h2>
-          <FAQ items={h.faq.items} />
+      {/* FAQ */}
+      <section>
+        <div className="band is-fill py-16">
+          <div className="max-w-3xl">
+            <Eyebrow index="05" label={h.faq.label} />
+            <h2 className="font-bold text-2xl mb-8" style={{ color: 'var(--ink)' }} data-reveal>{h.faq.heading}</h2>
+            <div data-reveal><FAQ items={h.faq.items} /></div>
+          </div>
         </div>
       </section>
 
-      <section id="om" className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-        <div className="max-w-2xl">
-          <p className="section-label">{h.about.label}</p>
-          <h2 className="font-bold text-2xl text-gray-900 mb-4">{h.about.heading}</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">{h.about.p1}</p>
-          <p className="text-gray-600 leading-relaxed">{h.about.p2}</p>
+      {/* ABOUT */}
+      <section id="om">
+        <div className="band py-16">
+          <div className="max-w-2xl">
+            <Eyebrow index="06" label={h.about.label} />
+            <h2 className="font-bold text-2xl mb-4" style={{ color: 'var(--ink)' }} data-reveal>{h.about.heading}</h2>
+            <p className="text-gray-600 leading-relaxed mb-4" data-reveal>{h.about.p1}</p>
+            <p className="text-gray-600 leading-relaxed" data-reveal>{h.about.p2}</p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-gray-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 text-center">
-          <h2 className="font-bold text-3xl text-white mb-3" style={{ fontFamily: "'Syne',var(--font-syne),sans-serif" }}>{h.cta.heading}</h2>
-          <p className="text-gray-400 mb-8 max-w-md mx-auto">{h.cta.sub}</p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <a href="#program" className="bg-[#003399] hover:bg-[#0040bb] text-white font-medium px-6 py-3 rounded-full transition-colors text-sm">{h.cta.btn1}</a>
-            <a href="https://youth.europa.eu" target="_blank" rel="noopener noreferrer"
-               className="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-medium px-6 py-3 rounded-full transition-colors text-sm">{h.cta.btn2}</a>
+      {/* CTA */}
+      <section>
+        <div className="band is-ink py-16 text-center">
+          <h2 className="font-bold text-3xl mb-3 text-white" style={{ fontFamily: "'Syne',var(--font-syne),sans-serif" }} data-reveal>{h.cta.heading}</h2>
+          <p className="text-gray-400 mb-8 max-w-md mx-auto" data-reveal>{h.cta.sub}</p>
+          <div className="flex flex-wrap gap-3 justify-center" data-reveal>
+            <a href="#program" className="btn btn-primary">{h.cta.btn1}</a>
+            <a href="https://youth.europa.eu" target="_blank" rel="noopener noreferrer" className="btn btn-inv">{h.cta.btn2}</a>
           </div>
         </div>
       </section>

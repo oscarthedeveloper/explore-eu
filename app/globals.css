@@ -24,6 +24,7 @@
   --eu-blue:      #003399;
   --eu-blue-600:  #0040BB;
   --eu-yellow:    #FFCC00;
+  --footer:       #2A2C33;
 
   --frame: 64rem;
   --pad:   clamp(1rem, 4vw, 1.5rem);
@@ -96,6 +97,7 @@ html.lenis, html.lenis body { height: auto; }
   border-color: var(--hair-inv);
 }
 .band.is-ink .section-label { color: rgba(255,255,255,0.55); }
+.band.is-footer { background: var(--footer); }
 
 /* hairline helpers */
 .hair    { border-color: var(--hair); }
@@ -109,11 +111,11 @@ html.lenis, html.lenis body { height: auto; }
 .tick::before { width: 7px; height: 1px; }
 .tick::after  { width: 1px; height: 7px; }
 
-/* table-style hairline grid: cells draw top+left, wrapper draws right+bottom */
-.cellgrid { border-right: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
-.cellgrid > * { border-top: 1px solid var(--hair); border-left: 1px solid var(--hair); }
+/* hairline grid: wrapper draws the full frame; each cell draws right+bottom via box-shadow so partial last rows stay closed (no missing lines) */
+.cellgrid { border: 1px solid var(--hair); }
+.cellgrid > * { box-shadow: 1px 0 0 0 var(--hair), 0 1px 0 0 var(--hair); }
 .cellgrid.is-inv { border-color: var(--hair-inv); }
-.cellgrid.is-inv > * { border-color: var(--hair-inv); }
+.cellgrid.is-inv > * { box-shadow: 1px 0 0 0 var(--hair-inv), 0 1px 0 0 var(--hair-inv); }
 
 /* hairline card */
 .b-card {

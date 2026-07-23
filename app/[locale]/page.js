@@ -9,9 +9,9 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-function Eyebrow({ index, label }) {
+function Eyebrow({ index, label, center }) {
   return (
-    <div className="flex items-center gap-3 mb-6" data-reveal-x>
+    <div className={`flex items-center gap-3 mb-6 ${center ? 'justify-center' : ''}`} data-reveal-x>
       <span className="mono text-[10.5px] tracking-[0.2em] text-gray-400">{index}</span>
       <span className="block w-7 h-px" style={{ background: 'var(--hair-strong)' }} />
       <span className="section-label !mb-0">{label}</span>
@@ -94,10 +94,10 @@ export default async function Home({ params }) {
       {/* FAQ */}
       <section>
         <div className="band is-fill py-16">
-          <div className="max-w-3xl">
-            <Eyebrow index="05" label={h.faq.label} />
+          <div className="max-w-3xl mx-auto text-center">
+            <Eyebrow index="05" label={h.faq.label} center />
             <h2 className="font-bold text-2xl mb-8" style={{ color: 'var(--ink)' }} data-reveal>{h.faq.heading}</h2>
-            <div data-reveal><FAQ items={h.faq.items} /></div>
+            <div data-reveal className="text-left"><FAQ items={h.faq.items} /></div>
           </div>
         </div>
       </section>
